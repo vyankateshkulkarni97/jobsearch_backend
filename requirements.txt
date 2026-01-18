@@ -1,0 +1,20 @@
+---
+
+## ⚙️ Backend Setup Instructions
+
+### 1️⃣ Create Virtual Environment (Recommended)
+
+```bash
+python -m venv venv
+2️⃣ Install Dependencies
+pip install -r requirements.txt
+If requirements.txt does not exist, install manually:
+pip install django djangorestframework django-cors-headers
+
+3️⃣ Apply Migrations
+python manage.py makemigrations
+python manage.py migrate
+4️⃣ Create Superuser
+python manage.py createsuperuser
+5️⃣ Run Development Server
+python manage.py runserver

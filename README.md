@@ -18,3 +18,25 @@ It provides **session-based authentication** (Login / Register / Logout) and con
 
 ## 📁 Project Structure
 
+backend/
+│── manage.py
+│── backend/
+│ ├── init.py
+│ ├── settings.py
+│ ├── urls.py
+│ ├── asgi.py
+│ └── wsgi.py
+│
+│── accounts/
+│ ├── migrations/
+│ ├── init.py
+│ ├── admin.py
+│ ├── apps.py
+│ ├── models.py
+│ ├── serializers.py
+│ ├── views.py
+│ └── urls.py
+│
+│── db.sqlite3
+└── requirements.txt
+
