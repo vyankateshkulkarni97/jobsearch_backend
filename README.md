@@ -27,7 +27,7 @@ backend/
 │ ├── asgi.py
 │ └── wsgi.py
 │
-│── accounts/
+│── jobfind/
 │ ├── migrations/
 │ ├── init.py
 │ ├── admin.py

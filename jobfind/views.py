@@ -2,7 +2,26 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+# jobs/views.py
+from rest_framework.views import APIView
+from .models import Job
+from .models import Company
+from .tasks import run_company_scraper
+from django.views.decorators.csrf import csrf_exempt
 
+@api_view(['GET'])
+def JobListAPI(request):
+    jobs = Job.objects.all().values()
+    return Response(jobs)
+
+@csrf_exempt
+@api_view(['POST'])
+def run_all_scrapers(request):
+    companies = Company.objects.all()
+    for company in companies:
+        run_company_scraper(company)
+    return Response({"message": "Scraping started for all companies"})
+    
 @api_view(['POST'])
 def register(request):
     username = request.data.get('username')
